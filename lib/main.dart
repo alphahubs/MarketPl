@@ -1,7 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:marketplace/onboarding/components/onboarding_w.dart';
+import 'package:marketplace/constant/screens.dart';
 
 void main() {
   runApp(
@@ -19,7 +19,9 @@ class MyApp extends StatelessWidget {
       useInheritedMediaQuery: true,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(textTheme: GoogleFonts.lexendTextTheme()),
-      home: const OnboardingWidget(),
+      // home: const OnboardingWidget(),
+      initialRoute: Onboarding.route,
+      routes: routes,
     );
   }
 }
