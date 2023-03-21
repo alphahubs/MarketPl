@@ -8,12 +8,10 @@ import '../../../models/products/product_model.dart';
 
 class DetailScreen extends StatelessWidget {
   final Product products;
-  // final int selectedProductIndex;
 
   const DetailScreen({
     Key? key,
     required this.products,
-    // required this.selectedProductIndex,
   }) : super(key: key);
 
   @override
