@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import '../../../../constant/screens.dart';
 
 class CheckoutBtn extends StatelessWidget {
+  final String? buttonText, price;
   const CheckoutBtn({
     Key? key,
+    this.buttonText,
+    this.price,
   }) : super(key: key);
 
   @override
@@ -14,7 +17,7 @@ class CheckoutBtn extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Total'),
+            Text(price ?? 'Total'),
             Text(
               '\$price',
               style: secondaryTextStyle.copyWith(
@@ -27,7 +30,7 @@ class CheckoutBtn extends StatelessWidget {
         sizedWidth60,
         Expanded(
           child: CustomButton(
-            buttonText: 'Checkout',
+            buttonText: buttonText ?? 'Checkout',
             onPressed: () {},
           ),
         )

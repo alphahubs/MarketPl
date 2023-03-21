@@ -19,6 +19,7 @@ class MyFormField extends StatelessWidget {
   final TextStyle? inputLabelStyle, inputHintStyle, inputTextStyle;
   final String? inputLabel, inputHint;
   final String? Function(String?)? validator;
+  final Function(String)? onChanged;
 
   // InputBorder? border = OutlineInputBorder();
   const MyFormField({
@@ -45,11 +46,13 @@ class MyFormField extends StatelessWidget {
     this.inputFillColor,
     this.inputLabel,
     this.inputHint,
+    this.onChanged,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       controller: controller,
       validator: validator,
       autocorrect: autocorrect ?? false,

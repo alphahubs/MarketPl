@@ -1,9 +1,16 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
+import 'package:marketplace/models/products/product_model.dart';
 
 import '../../../../constant/screens.dart';
 
 class RecentlyViewed extends StatelessWidget {
-  const RecentlyViewed({Key? key}) : super(key: key);
+  final Product product;
+  const RecentlyViewed({
+    Key? key,
+    required this.product,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,16 +39,21 @@ class RecentlyViewed extends StatelessWidget {
                 child: Container(
                   height: 50,
                   width: 50,
-                  color: primaryColor,
+                  decoration: BoxDecoration(
+                      color: placeholder,
+                      image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: NetworkImage(product.productImage))),
                 ),
               ),
-              title: const Text('Product Name'),
-              subtitle: const Text('Product Category'),
+              title: Text(product.productName),
+              subtitle: Text(
+                product.productCategory,
+                style: productCategoryStyle,
+              ),
               trailing: Text(
-                '\$price',
-                style: secondaryTextStyle.copyWith(
-                  color: secondaryColor,
-                ),
+                'NGN ${product.productPrice}',
+                style: priceTextStyle,
               ),
             ),
           ),

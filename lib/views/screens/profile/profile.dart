@@ -12,7 +12,13 @@ class Profile extends StatelessWidget {
     return SafeArea(
         child: Column(
       children: [
-        const AppBarWidget(heading: 'Profile'),
+        AppBarWidget(
+          heading: Text(
+            'Profile',
+            style: secondaryTextStyle.copyWith(fontSize: 18),
+            textAlign: TextAlign.center,
+          ),
+        ),
         sizedHeight10,
         CircleAvatar(
           minRadius: 40,
@@ -28,7 +34,8 @@ class Profile extends StatelessWidget {
               style: primaryTextStyle,
             ),
             sizedHeight10,
-            const Text('Edit Profile'),
+            GestureDetector(
+                onTap: () async {}, child: const Text('Edit Profile')),
           ],
         ),
         sizedHeight30,

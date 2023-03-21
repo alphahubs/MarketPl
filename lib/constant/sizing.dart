@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-const primaryPadding = EdgeInsets.symmetric(vertical: 8, horizontal: 16);
+const primaryPadding = EdgeInsets.symmetric(vertical: 2, horizontal: 16);
 
 const secondaryPadding = EdgeInsets.symmetric(vertical: 6, horizontal: 12);
 

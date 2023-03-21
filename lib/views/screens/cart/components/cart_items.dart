@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:marketplace/models/products/product_model.dart';
 
 import '../../../../constant/screens.dart';
 import 'cart_count.dart';
 
 class CartItems extends StatelessWidget {
+  final Product product;
   const CartItems({
     Key? key,
+    required this.product,
   }) : super(key: key);
 
   @override
@@ -26,27 +29,26 @@ class CartItems extends StatelessWidget {
             height: 100,
             width: 100,
             decoration: BoxDecoration(
-              color: primaryColor,
+              color: placeholder,
               borderRadius: BorderRadius.circular(12),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: NetworkImage(product.productImage),
+              ),
             ),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // RichText(
-              //     text: TextSpan(
-              //   style: secondaryTextStyle.copyWith(
-              //     color: secondaryColor,
-              //   ),
-              //   children: const [
-              //     TextSpan(text: 'Product Name\n'),
-              //     TextSpan(text: '\$price\n'),
-              //     TextSpan(text: 'QTY'),
-              //   ],
-              // )),
-              const Text('Product Name'),
-              const Text('\$price'),
+              Text(
+                product.productName,
+                style: productNameStyle,
+              ),
+              Text(
+                'NGN ${product.productPrice}',
+                style: priceTextStyle,
+              ),
               sizedHeight10,
               Row(
                 children: const [

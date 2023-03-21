@@ -15,6 +15,19 @@ const tertiaryTextStyle = TextStyle(
   fontSize: 12,
 );
 
+const productNameStyle = TextStyle(
+  fontSize: 17,
+  fontWeight: FontWeight.w600,
+);
+
+const productCategoryStyle = TextStyle(
+  fontSize: 10,
+);
+const priceTextStyle = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.w600,
+);
+
 ButtonStyle buttonStyle = ElevatedButton.styleFrom(
   elevation: 0,
   // padding: const EdgeInsets.symmetric(
